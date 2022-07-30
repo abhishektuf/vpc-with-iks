@@ -10,7 +10,7 @@
 # }
 
 variable "TF_VERSION" {
-  default     = "1.0"
+  default     = "1.1.9"
   type        = string
   description = "The version of the Terraform engine that's used in the Schematics workspace."
 }
@@ -41,7 +41,7 @@ variable "region" {
 variable "resource_group" {
   description = "Name of existing resource group where all infrastructure will be provisioned"
   type        = string
-  default     = "asset-development"
+  default     = "Default"
 
   validation {
     error_message = "Unique ID must begin and end with a letter and contain only letters, numbers, and - characters."
@@ -107,7 +107,7 @@ variable "iks_cluster_version" {
 variable "machine_type" {
   description = "The flavor of VPC worker node to use for your cluster. Use `ibmcloud ks flavors` to find flavors for a region."
   type        = string
-  default     = "bx2.4x16"
+  default     = "cx2.2x4"
 }
 
 variable "workers_per_zone" {
@@ -124,7 +124,7 @@ variable "workers_per_zone" {
 variable "disable_public_service_endpoint" {
   description = "Disable public service endpoint for cluster. Once the service endpoint has been enabled, it cannot be disabled after cluster creation."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "wait_till" {
